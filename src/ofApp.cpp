@@ -6,14 +6,18 @@ jewel.load("diamond.png");// image to use (must be stored in "random/bin/data" f
 //X = {500, 1000, 30, 100, 300, 200, 750, 380 };// set of x-coordinates for jewel
 //Y = {630, 400, 900,40, 200, 0, 90, 30}; //set of y-coordinates for jewel
 int min = 0, max = 1200;
+int min1 = 0, max1 = 970;
 random_device rd;
 mt19937 en(rd ());
 uniform_int_distribution < > dist (min,max);
+uniform_int_distribution < > dist1 (min1,max1);
 //vector <float> X;
 for (int i=0;i<20;i++)
 X.push_back(dist(en));
+Y.push_back(dist1(en));
 for (auto x:X)
-cout << x << endl;
+for (auto y: Y)
+cout << x << y << endl;
 }
 
 //--------------------------------------------------------------
